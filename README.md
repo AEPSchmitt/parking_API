@@ -10,7 +10,7 @@ Respons: Givent {antal} nyeste parkeringstilladelser
 ### Timebaseret 
 Endpoint: data.kk.dk/parking/{år}/{måned}/{dag}/{time:minut}
 
-Respons: Parkeringstilladelser for 1 time op til det angivne tidspunkt
+Respons: Parkeringstilladelser for timen op til det angivne tidspunkt
 
 [Eksempel: data.kk.dk/parking/2017/01/09/08:00](http://data.kk.dk/dataset/parkeringstilladelser-parking-rights/resource/0fa86bfe-28d1-47f2-9333-f434bf37025c)
 
@@ -23,6 +23,15 @@ Respons: Parkeringstilladelser indenfor det angivne tidsrum
 
 (Note: Brede intervaller kan resultere i meget store datasæt, som tager længe at hente. Begræns evt. hentning til flere kald af mindre pakker)
 ## Vedligeholdelse
-### nginx 502 Bad Gateway
+### Løsning af '502 Bad Gateway'
 En fejl 502 kan skyldes to forskellige problemer, der kan løses på følgende måder:
+
 Genstart af nginx routeren:
+ - Forbind med SSH til cph.opendata.dk
+ - Kør kommandoen 'sudo service nginx restart'
+ - Indtast kodeord hvis konsollen beder om det
+ 
+Genstart af node:
+ - Forbind med SSH til cph.opendata.dk
+ - Gå til nodens lokation med 'cd /etc/node-servers/parking'
+ - Start noden med 'forever start parking.js'
