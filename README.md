@@ -24,3 +24,5 @@ Respons: Parkeringstilladelser indenfor det angivne tidsrum
 (Note: Brede intervaller kan resultere i meget store datasæt, som tager længe at hente. Begræns evt. hentning til flere kald af mindre pakker)
 ## Vedligeholdelse
 ### nginx 502 Bad Gateway
+En fejl 502 kan skyldes to forskellige problemer, der kan løses på følgende måder:
+Genstart af nginx routeren:
